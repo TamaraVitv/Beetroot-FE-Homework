@@ -1,86 +1,96 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
   </head>
   <body>
-    <main>
-      <h1>Персональні дані</h1>
-      <form action="#" method="post">
+    <form action="#" method="post">
+      <fieldset>
+        <legend>Personal data:</legend>
         <div>
-          Surname
-          <input
-            type="text"
-            name="surname"
-            placeholder="Enter Surname"
-            id="2"
-          />
+          <label for="userName">Your name</label>
+          <input type="text" id="userName" name="userName" required />
         </div>
         <div>
-          <label for="tel">Телефон</label>
+          <label for="email">Your email</label>
           <input
             type="email"
-            name="userEmail"
-            placeholder="Enter email"
-            id="3"
+            id="email"
+            name="email"
+            placeholder="example@email.com"
+            required
           />
         </div>
         <div>
-          <label for="tel">Телефон</label>
-          <input
-            type="tel"
-            name="tel"
-            autocomplete="off"
-            placeholder="Enter tel"
-            id="tel"
-          />
+          <label for="password">Create password</label>
+          <input type="password" id="password" name="password" required />
         </div>
         <div>
-          <label for="password">Пароль</label>
+          <label for="confirmPassword">Confirm password</label>
           <input
             type="password"
-            name="password"
-            placeholder="Введіть пароль"
-            id="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
           />
         </div>
         <div>
-          Date
-          <input type="date" name="date" id="" />
-        </div>
-        <div>
-          Radio
-          <div>
-            <input type="radio" value="male" name="radio" id="male" />
-            <label for="male">Чоловіча</label>
+          <label for="gender">Your gender</label><br />
+          <div id="gender">
+            <input type="radio" id="male" name="gender" value="male" required />
+            <label for="male">Male</label><br />
+            <input
+              type="radio"
+              id="female"
+              name="gender"
+              value="female"
+              required
+            />
+            <label for="female">Female</label><br />
           </div>
-          <div>
-            <input type="radio" value="female" name="radio" />
-            <label for="male">Жіноча</label>
-          </div>
         </div>
         <div>
-          Checkbox
-          <div><input type="checkbox" name="checkbox1" value="" /> Car</div>
-          <div><input type="checkbox" name="checkbox2" value="" /> Bicycle</div>
+          <label for="age">Your age</label>
+          <input type="number" name="age" id="age" required />
         </div>
         <div>
-          <textarea name="textarea" cols="30" rows="4">Textarea</textarea>
-        </div>
-        <div>
-          <select name="pets" id="pet-select" required>
-            <option value="">--Please choose an option--</option>
-            <option value="dog">Front-End</option>
-            <option value="cat">Back-End</option>
-            <option value="hamster">Project Management</option>
-            <option value="hamster">QA Manual</option>
+          <label for="course">Select course</label>
+          <select name="course" id="course" required>
+            <option value="">Select the course</option>
+            <option value="front-end">Front-End</option>
+            <option value="back-end">Back-End</option>
+            <option value="projectManagement">Project Management</option>
+            <option value="qa">QA Manual</option>
           </select>
         </div>
-        <button type="reset">Очистити форму</button>
-        <button type="submit">Зареєструватись</button>
-      </form>
-    </main>
+        <div>
+          <label for="address">Full address</label>
+          <textarea
+              name="adress"
+              id="adress"
+              cols="24"
+              rows="3"
+              placeholder="Country, region, city/town, street"
+              required
+            >
+          </textarea>
+          </div>
+        </div>
+      </fieldset>
+      <br />
+      <div>
+        <input type="checkbox" id="agree" name="agree" value="agree" />
+        <label for="agree" required>
+          I agree to have my personal data processed
+        </label>
+      </div>
+      <br />
+      <div>
+        <button type="reset">Reset</button>
+        <button type="submit">Register</button>
+      </div>
+    </form>
   </body>
 </html>
